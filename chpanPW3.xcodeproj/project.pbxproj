@@ -18,6 +18,10 @@
 		6D58888C2710A1EA001D0893 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58888B2710A1EA001D0893 /* TableViewController.swift */; };
 		6D5888912710A205001D0893 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5888902710A205001D0893 /* CollectionViewController.swift */; };
 		6D5888962710A488001D0893 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5888952710A488001D0893 /* table.png */; };
+		6D58889C2710A948001D0893 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58889B2710A948001D0893 /* UIViewPin.swift */; };
+		6D5888B22710B104001D0893 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5888B12710B104001D0893 /* CollectionCell.swift */; };
+		6D5888B82710BBD6001D0893 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5888B72710BBD5001D0893 /* TableCell.swift */; };
+		6D5888C42710C10B001D0893 /* StackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5888C32710C10B001D0893 /* StackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		6D58888B2710A1EA001D0893 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6D5888902710A205001D0893 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		6D5888952710A488001D0893 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table.png; sourceTree = "<group>"; };
+		6D58889B2710A948001D0893 /* UIViewPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewPin.swift; sourceTree = "<group>"; };
+		6D5888B12710B104001D0893 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		6D5888B72710BBD5001D0893 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		6D5888C32710C10B001D0893 /* StackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,8 @@
 		6D58884B27109BAA001D0893 /* chpanPW3 */ = {
 			isa = PBXGroup;
 			children = (
+				6D5888BC2710BBDA001D0893 /* Cells */,
+				6D58889A2710A92F001D0893 /* UIViewPin */,
 				6D5888822710A15F001D0893 /* ViewControllers */,
 				6D58884C27109BAA001D0893 /* AppDelegate.swift */,
 				6D58884E27109BAA001D0893 /* SceneDelegate.swift */,
@@ -143,6 +153,24 @@
 				6D5888902710A205001D0893 /* CollectionViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6D58889A2710A92F001D0893 /* UIViewPin */ = {
+			isa = PBXGroup;
+			children = (
+				6D58889B2710A948001D0893 /* UIViewPin.swift */,
+			);
+			path = UIViewPin;
+			sourceTree = "<group>";
+		};
+		6D5888BC2710BBDA001D0893 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6D5888B72710BBD5001D0893 /* TableCell.swift */,
+				6D5888B12710B104001D0893 /* CollectionCell.swift */,
+				6D5888C32710C10B001D0893 /* StackCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D5888B82710BBD6001D0893 /* TableCell.swift in Sources */,
 				6D5888912710A205001D0893 /* CollectionViewController.swift in Sources */,
+				6D5888C42710C10B001D0893 /* StackCell.swift in Sources */,
 				6D58885127109BAA001D0893 /* ViewController.swift in Sources */,
 				6D5888842710A1C3001D0893 /* StackViewController.swift in Sources */,
+				6D5888B22710B104001D0893 /* CollectionCell.swift in Sources */,
 				6D58884D27109BAA001D0893 /* AppDelegate.swift in Sources */,
+				6D58889C2710A948001D0893 /* UIViewPin.swift in Sources */,
 				6D58888C2710A1EA001D0893 /* TableViewController.swift in Sources */,
 				6D58884F27109BAA001D0893 /* SceneDelegate.swift in Sources */,
 			);
