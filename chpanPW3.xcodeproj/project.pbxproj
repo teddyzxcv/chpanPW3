@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		098AE4372714B2400037E789 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098AE4362714B2400037E789 /* AlarmView.swift */; };
+		098AE43A2714B2BE0037E789 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098AE4392714B2BE0037E789 /* Time.swift */; };
+		098AE43C2714B2F80037E789 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098AE43B2714B2F80037E789 /* TimeModel.swift */; };
+		098AE43E2714BD2C0037E789 /* EyeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098AE43D2714BD2C0037E789 /* EyeCell.swift */; };
 		6D58884D27109BAA001D0893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58884C27109BAA001D0893 /* AppDelegate.swift */; };
 		6D58884F27109BAA001D0893 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58884E27109BAA001D0893 /* SceneDelegate.swift */; };
 		6D58885127109BAA001D0893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58885027109BAA001D0893 /* ViewController.swift */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		098AE4362714B2400037E789 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		098AE4392714B2BE0037E789 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		098AE43B2714B2F80037E789 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		098AE43D2714BD2C0037E789 /* EyeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeCell.swift; sourceTree = "<group>"; };
 		6D58884927109BAA001D0893 /* chpanPW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chpanPW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D58884C27109BAA001D0893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D58884E27109BAA001D0893 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098AE4382714B2A90037E789 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				098AE4392714B2BE0037E789 /* Time.swift */,
+				098AE43B2714B2F80037E789 /* TimeModel.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		6D58884027109BAA001D0893 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +130,7 @@
 		6D58884B27109BAA001D0893 /* chpanPW3 */ = {
 			isa = PBXGroup;
 			children = (
+				098AE4382714B2A90037E789 /* Time */,
 				6D5888BC2710BBDA001D0893 /* Cells */,
 				6D58889A2710A92F001D0893 /* UIViewPin */,
 				6D5888822710A15F001D0893 /* ViewControllers */,
@@ -169,6 +187,8 @@
 				6D5888B72710BBD5001D0893 /* TableCell.swift */,
 				6D5888B12710B104001D0893 /* CollectionCell.swift */,
 				6D5888C32710C10B001D0893 /* StackCell.swift */,
+				098AE4362714B2400037E789 /* AlarmView.swift */,
+				098AE43D2714BD2C0037E789 /* EyeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -303,13 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098AE43A2714B2BE0037E789 /* Time.swift in Sources */,
 				6D5888B82710BBD6001D0893 /* TableCell.swift in Sources */,
 				6D5888912710A205001D0893 /* CollectionViewController.swift in Sources */,
 				6D5888C42710C10B001D0893 /* StackCell.swift in Sources */,
 				6D58885127109BAA001D0893 /* ViewController.swift in Sources */,
+				098AE43E2714BD2C0037E789 /* EyeCell.swift in Sources */,
+				098AE43C2714B2F80037E789 /* TimeModel.swift in Sources */,
 				6D5888842710A1C3001D0893 /* StackViewController.swift in Sources */,
 				6D5888B22710B104001D0893 /* CollectionCell.swift in Sources */,
 				6D58884D27109BAA001D0893 /* AppDelegate.swift in Sources */,
+				098AE4372714B2400037E789 /* AlarmView.swift in Sources */,
 				6D58889C2710A948001D0893 /* UIViewPin.swift in Sources */,
 				6D58888C2710A1EA001D0893 /* TableViewController.swift in Sources */,
 				6D58884F27109BAA001D0893 /* SceneDelegate.swift in Sources */,

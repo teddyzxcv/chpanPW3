@@ -1,62 +1,85 @@
 //
-//  ViewController.swift
-//  TableViewNisWs
-//  Created by Dmitry Alexandrov
-//  Read it:
-//  https://ioscoachfrank.com/remove-main-storyboard.html
+//  StackViewController.swift
+//
+//  Created by HSE  FKN on 01.10.2021.
+//
+
 import UIKit
 
-class StackViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
-{
-    var tableView: UIStackView!
-    let cellId = "Cell"
-
+class StackViewController: UIViewController {
+    private var stackView: UIStackView!
+    private var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        view.backgroundColor = .green
+        setupScrollView()
+        setupStackView()
     }
-
     
-    private func setupTableView() {
-        let rect = CGRect(x: 15, y: 15, width: view.frame.width - 30, height: view.frame.height - 30)
+    private func setupScrollView() {
+        let rect = CGRect(x: 10, y: 10, width: view.frame.width - 20, height: view.frame.height - 20)
+        scrollView = UIScrollView(frame: rect)
+        view.addSubview(scrollView)
+        scrollView.pinTop(to: view.topAnchor)
+        scrollView.pinBottom(to: view.bottomAnchor)
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.contentSize = CGSize(
+            width: self.scrollView.frame.width,
+            height: stackView.frame.height
+        )
         
-        tableView = UIStackView(frame: rect)
-        tableView
-        tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        tableView.rowHeight = 80
-        tableView.showsVerticalScrollIndicator = true
-        tableView.backgroundColor = UIColor.green //black
-        tableView.translatesAutoresizingMaskIntoConstraints = false //
-        tableView.layer.cornerRadius = 35
-        tableView.layer.masksToBounds = true
+        scrollView.alwaysBounceVertical = true
+    }
+    
+    private func setupStackView() {
+        let rect = CGRect(x: 10, y: 10, width: view.frame.width - 20, height: view.frame.height - 20)
+        let stack = UIStackView(frame: rect)
+        scrollView.addSubview(stack)
         
-        self.view.addSubview(tableView)
-    }
-
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 31
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StackCell
-    
+        stack.distribution = .fillEqually
+        stack.axis = .vertical
+        stack.spacing = 10
         
-        cell.layer.cornerRadius = 15
-        cell.layer.masksToBounds = true
-
-        return cell
+        stack.pinTop(to: scrollView.topAnchor)
+        stack.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+        //stack.pinLeft(to: scrollView.leftAnchor)
+        stack.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
+        //stack.pinRight(to: scrollView.rightAnchor)
+        stack.pinBottom(to: scrollView.bottomAnchor)
+        stack.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+//        stack.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
+//        stack.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+//        stack.pin(to: view, .left, .right)
+        stack.backgroundColor = .white
+        self.stackView = stack
+        getStackViewData()
     }
     
+//    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+//        return 31
+//    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        tableView.deselectRow(at: indexPath, animated: true)
+    
+    func getStackViewData() {
+        var cell: StackCell = StackCell()
+        var top = 40
+        for _ in 0...200 {
+            cell = StackCell()
+            cell.setHeight(to: 20)
+            //cell.timeLabel.text = generator.randomTime()
+            cell.layer.masksToBounds = true
+            cell.setHeight(to: Double(stackView.frame.height)/10)
+            cell.translatesAutoresizingMaskIntoConstraints = false
+            stackView.addArrangedSubview(cell)
+            cell.topAnchor.constraint(equalTo: stackView.topAnchor, constant: CGFloat(top)).isActive = true
+            top += 60
+        }
+        
     }
-
 }

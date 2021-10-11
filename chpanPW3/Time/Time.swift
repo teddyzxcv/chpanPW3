@@ -2,7 +2,19 @@
 //  Time.swift
 //  chpanPW3
 //
-//  Created by Наталья Белова on 11.10.2021.
+//  Created by HSE  FKN on 01.10.2021.
 //
 
-import Foundation
+public struct Time {
+    var hours: Int
+    var minutes: Int
+
+    init(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) {
+        self.hours = hours
+        self.minutes = minutes
+    }
+    
+    func toString() -> String {
+        return String(hours) + ":" + String(minutes)
+    }
+}

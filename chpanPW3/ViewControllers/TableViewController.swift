@@ -9,11 +9,12 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     var tableView: UITableView!
-    let cellId = "Cell"
+    let cellId = "MyCell"
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
         setupTableView()
     }
 
@@ -23,39 +24,45 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView = UITableView(frame: rect)
         tableView.register(TableCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(EyeCell.self, forCellReuseIdentifier: "eyeCell")
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        tableView.backgroundColor = UIColor.clear
         tableView.rowHeight = 80
         tableView.showsVerticalScrollIndicator = true
-        tableView.backgroundColor = UIColor.green //black
         tableView.translatesAutoresizingMaskIntoConstraints = false //
         tableView.layer.cornerRadius = 35
         tableView.layer.masksToBounds = true
         
         self.view.addSubview(tableView)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.alwaysBounceVertical = true
+    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 31
+        return 300
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableCell
-    
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "eyeCell",
+            for: indexPath
+        ) as? EyeCell
         
-        cell.layer.cornerRadius = 15
-        cell.layer.masksToBounds = true
-
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        tableView.deselectRow(at: indexPath, animated: true)
+        cell?.setupEye()
+        return cell ?? UITableViewCell()
     }
 
 }
+
+
+
