@@ -27,10 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = nav
         self.window = window
         window.makeKeyAndVisible()
-        
-        
-        
-        
         guard let items = tabBarController.tabBar.items else {
             return
         }
@@ -41,6 +37,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[i].image = images[i]
         }
     }
+    
+    
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

@@ -12,10 +12,12 @@ class StackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .red
         setupScrollView()
         setupStackView()
     }
+    
+
     
     private func setupScrollView() {
         let rect = CGRect(x: 10, y: 10, width: view.frame.width - 20, height: view.frame.height - 20)
@@ -53,17 +55,17 @@ class StackViewController: UIViewController {
         //stack.pinRight(to: scrollView.rightAnchor)
         stack.pinBottom(to: scrollView.bottomAnchor)
         stack.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-//        stack.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
-//        stack.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
-//        stack.pin(to: view, .left, .right)
+        //        stack.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
+        //        stack.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+        //        stack.pin(to: view, .left, .right)
         stack.backgroundColor = .white
         self.stackView = stack
         getStackViewData()
     }
     
-//    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-//        return 31
-//    }
+    //    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+    //        return 31
+    //    }
     
     
     func getStackViewData() {

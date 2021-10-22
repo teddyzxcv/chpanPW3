@@ -44,6 +44,7 @@ final class CollectionViewController: UIViewController,UICollectionViewDataSourc
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 50, left: 50, bottom: 25, right: 50)
         layout.itemSize = CGSize(width: view.frame.width - 60, height: view.frame.height / 10)
+        layout.scrollDirection = .horizontal
         
         let rect = CGRect(x: 15, y: 15, width: view.frame.width - 30, height: view.frame.height - 30)
         
